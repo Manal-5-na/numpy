@@ -1,0 +1,38 @@
+import numpy as np
+
+def input_matrix_vector():
+    # Choose size
+    n = int(input("Enter the size of the matrix (2 or 3): "))
+    if n not in [2, 3]:
+        print("Only 2x2 or 3x3 matrices are supported.")
+        return
+
+    # Input matrix
+    print(f"Enter the {n}×{n} matrix A (row by row):")
+    A = []
+    for i in range(n):
+        row = []
+        for j in range(n):
+            val = float(input(f"Enter A[{i+1}][{j+1}]: "))
+            row.append(val)
+        A.append(row)
+    A = np.array(A)
+
+    # Input vector
+    print(f"Enter the {n}×1 vector b:")
+    b = []
+    for i in range(n):
+        val = float(input(f"Enter b[{i+1}]: "))
+        b.append(val)
+    b = np.array(b)
+
+    # Display inputs
+    print("\nMatrix A:")
+    print(A)
+    print("\nVector b:")
+    print(b)
+
+    return A, b
+
+# Run the function
+A, b = input_matrix_vector()
