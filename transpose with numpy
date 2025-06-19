@@ -1,0 +1,15 @@
+import numpy as np
+
+def transpose_matrix():
+    A = np.array([[1, 2, 3], [4, 5, 6]])
+    print("Original Matrix A:")
+    print(A)
+
+    transpose = [[A[j][i] for j in range(len(A))] for i in range(len(A[0]))]
+    print("\nTranspose of A:")
+    for row in transpose:
+        print(row)
+
+transpose_matrix()
+
+
